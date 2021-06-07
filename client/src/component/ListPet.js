@@ -3,7 +3,7 @@ import '../styles/ListPet.css';
 import { Form, Input, TextArea, Button, Select } from 'semantic-ui-react'
 import {speciesOption, genderOption} from './DropdownOptions';
 import {catBreedOption, dogBreedOption, locationOption} from './DropdownOptions';
-import {storage} from '../../firebase/firebase'
+import {storage} from '../firebase/firebase'
 import history from './history';
 
 class ListPet extends Component {
