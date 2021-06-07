@@ -12,7 +12,7 @@ const port = process.env.PORT || 8081;
 console.log("process.env.PORT: ", process.env.PORT);
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
-//app.use(cors());
+app.use(cors());
 app.use(express.json());
 
 const middleware = require("./middleware");
