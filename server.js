@@ -17,7 +17,7 @@ app.use(express.json());
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 const connection = mongoose.connection;
-connection.once('open', () => {
+connection.on('open', () => {
     console.log("MongoDB database connection established successfully");
 })
 
@@ -25,6 +25,7 @@ const routes = require("./routes");
 app.use("", routes);
 
 if (process.env.NODE_ENV === 'production') {
+    console.log("hi");
     app.use(express.static('client/build'));
 }
 
