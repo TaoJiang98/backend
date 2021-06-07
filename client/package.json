@@ -2,7 +2,7 @@
   "name": "petsfind",
   "version": "0.1.0",
   "homepage": "./",
-  "proxy": "http://localhost:3000",
+  "proxy": "http://localhost:3001",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.4",
