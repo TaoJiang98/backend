@@ -50,7 +50,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:8081/randompets", {
+        fetch("http://localhost:80/randompets", {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
