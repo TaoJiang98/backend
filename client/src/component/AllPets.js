@@ -1,4 +1,5 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import {base_url} from './Config';
 
 class AllPets extends Component {
     constructor() {
@@ -10,9 +11,16 @@ class AllPets extends Component {
     }
 
     getAllPets() {
-        const url = "/allpets";
+        const url = base_url + "/allpets";
         let jsonTarget= [];
-        fetch(url)
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE',
+            }
+        })
             .then(res => res.json())
             .then((res) => {
                 res.forEach(function(pet) {

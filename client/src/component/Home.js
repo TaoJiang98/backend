@@ -8,6 +8,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Input } from 'semantic-ui-react'
 import history from './history';
+import {base_url} from './Config';
 
 const responsive = {
     superLargeDesktop: {
@@ -50,7 +51,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:80/randompets", {
+        fetch(base_url + "/randompets", {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -97,7 +98,7 @@ class Home extends Component {
     }
 
     handleSubmitEmail = () => {
-        fetch('http://localhost:8081/submitemail', {
+        fetch(base_url + '/submitemail', {
             method: 'POST',
             body: JSON.stringify({
                 email: this.state.email

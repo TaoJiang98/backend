@@ -5,6 +5,7 @@ import {speciesOption, genderOption} from './DropdownOptions';
 import {catBreedOption, dogBreedOption, locationOption} from './DropdownOptions';
 import {storage} from '../firebase/firebase'
 import history from './history';
+import {base_url} from './Config';
 
 class ListPet extends Component {
 
@@ -149,7 +150,7 @@ class ListPet extends Component {
                     // gets the download url then sets the image from firebase as the value for the imgUrl key:
                     storage.ref('images').child(`${this.state.name}_${this.state.contact_phone}`).getDownloadURL()
                     .then(fireBaseUrl => {
-                        fetch('http://localhost:8081/listpet', {
+                        fetch(base_url + '/listpet', {
                             method: 'POST',
                             body: JSON.stringify({
                                 species: this.state.species,

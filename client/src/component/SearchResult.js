@@ -5,6 +5,7 @@ import Pet from './Pet';
 import history from './history';
 import CheckBox from './CheckBox';
 import { sortOption } from './DropdownOptions';
+import { base_url } from './Config';
 
 
 const parseQueryParameter = q => {
@@ -120,7 +121,7 @@ class SearchResult extends Component {
     }
 
     fetchPets = (params) => {
-        fetch("http://localhost:8081/filterpet", {
+        fetch(base_url + "/filterpet", {
             method: 'POST',
             body: JSON.stringify(params),
             headers: {

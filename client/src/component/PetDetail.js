@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/PetDetail.css';
+import {base_url} from './Config';
 
 class PetDetail extends Component {
     constructor(props) {
@@ -9,7 +10,7 @@ class PetDetail extends Component {
         }
         
         let selectedCardId = localStorage.getItem("selectedPetID");
-        const url = "/allpets/" + selectedCardId;
+        const url = base_url + "/allpets/" + selectedCardId;
 
         fetch(url, {
             method: 'GET',

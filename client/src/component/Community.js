@@ -4,6 +4,7 @@ import { Button, Radio, Dropdown } from "semantic-ui-react";
 import history from './history';
 import CheckBox from './CheckBox';
 import { sortOption } from './DropdownOptions';
+import {base_url} from './Config';
 
 import '../styles/Community.css';
 
@@ -60,7 +61,15 @@ class Community extends Component {
     }
 
     fetchPets = (params) => {
-        fetch("/filterpet")
+        fetch(base_url + "/filterpet", {
+            method: 'POST',
+            body: JSON.stringify(params),
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE',
+            }
+        })
         .then(async response => {
             let data = await response.json()
             if (response.status === 404) {
