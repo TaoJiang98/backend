@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const app = express();
-const port = 10000;
+const port = process.env.PORT || 8081;
 console.log("process.env.PORT: ", process.env.PORT);
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 

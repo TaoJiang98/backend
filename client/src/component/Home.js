@@ -66,6 +66,7 @@ class Home extends Component {
             .catch(err => {
                 this.setState({err: err.message});
             })
+        
     }
 
     handleChange = (value, state) => {
