@@ -10,16 +10,9 @@ class AllPets extends Component {
     }
 
     getAllPets() {
-        const url = "http://localhost:8081/allpets";
+        const url = "/allpets";
         let jsonTarget= [];
-        fetch(url, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE',
-            }
-        })
+        fetch(url)
             .then(res => res.json())
             .then((res) => {
                 res.forEach(function(pet) {

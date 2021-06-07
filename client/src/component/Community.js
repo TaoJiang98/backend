@@ -60,15 +60,7 @@ class Community extends Component {
     }
 
     fetchPets = (params) => {
-        fetch("http://localhost:8081/filterpet", {
-            method: 'POST',
-            body: JSON.stringify(params),
-            headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE',
-            }
-        })
+        fetch("/filterpet")
         .then(async response => {
             let data = await response.json()
             if (response.status === 404) {

@@ -9,7 +9,7 @@ class PetDetail extends Component {
         }
         
         let selectedCardId = localStorage.getItem("selectedPetID");
-        const url = "http://localhost:8081/allpets/" + selectedCardId;
+        const url = "/allpets/" + selectedCardId;
 
         fetch(url, {
             method: 'GET',
